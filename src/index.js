@@ -1,1 +1,2 @@
-var foo = (a, b) => a + b;
+const foo = (a, b) => a + b;
+foo(1,2);
