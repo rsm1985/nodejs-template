@@ -1,0 +1,57 @@
+{
+  "name": "nodejs-template",
+  "version": "1.0.0",
+  "description": "nodejs-template",
+  "main": "index.js",
+  "author": "Rudenko Sergey <rudenko-serg@ya.ru>",
+  "license": "MIT",
+  "scripts": {
+    "start": "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/main.js",
+    "dev": "node index.js",
+    "lint:js": "eslint src",
+    "lint-staged": "lint-staged"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "lint-staged": "^9.5.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.19.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    }
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2017": "^6.24.1",
+    "rimraf": "^3.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
